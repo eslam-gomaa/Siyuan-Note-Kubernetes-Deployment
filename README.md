@@ -1,13 +1,20 @@
 # Siyuan-Note-Kubernetes-Deployment
 Deploy Siyuan Note on your Kubernetes cluster.
 
-
+<br>
+<br>
+<br>
 
 ## Usage
 
 Things to change
 * Storage Class
 
+<br>
+
+---
+
+<br>
 
 ```bash
 git clone https://github.com/eslam-gomaa/Siyuan-Note-Kubernetes-Deployment.git
