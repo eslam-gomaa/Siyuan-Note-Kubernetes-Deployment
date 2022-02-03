@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: siyuan
-        image: b3log/siyuan:v1.7.10
+        image: b3log/siyuan:latest
         command: [ "/bin/sh", "-c", "--" ]
         args: ["/opt/siyuan/kernel -accessAuthCode=123456 -resident -workspace=/siyuan/data -ssl=true -servePath=siyuan.devops-caffe.com"]
         ports:
