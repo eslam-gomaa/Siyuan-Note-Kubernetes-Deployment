@@ -27,7 +27,7 @@ kubectl get pods -l app=siyuan-note
 ```
 <br>
 
-##### Troubleshooting
+***Troubleshooting***
 ```bash
 kubectl describe pods -l app=siyuan-note
 kubectl logs -l app=siyuan-note
