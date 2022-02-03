@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: siyuan-note
+  namespace: default
+  labels:
+    app: siyuan-note
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: siyuan-note
+  template:
+    metadata:
+      labels:
+        app: siyuan-note
+    spec:
+      containers:
+      - name: siyuan
+        image: b3log/siyuan:v1.7.10
+        command: [ "/bin/sh", "-c", "--" ]
+        args: ["/opt/siyuan/kernel -accessAuthCode=123456 -resident -workspace=/siyuan/data -ssl=true -servePath=siyuan.devops-caffe.com"]
+        ports:
+        - containerPort: 6806
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        volumeMounts:
+          - name: siyuan-note-data
+            mountPath: /siyuan/data
+      volumes:
+        - name: siyuan-note-data
+          persistentVolumeClaim:
+            claimName: siyuan-note-data-claim
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: siyuan-note-data-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
+  storageClassName: nfs-client
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: siyuan-note
+  name: siyuan-note
+spec:
+  ports:
+  - port: 80
+    targetPort: 6806 # Pod port
+  selector:
+    app: siyuan-note
+---
+
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   name: siyuan-note
+#   namespace: default
+#   annotations:
+#     kubernetes.io/ingress.class: "haproxy"
+# spec:
+#   rules:
+#   - host: your-domain.com
+#     http:
+#       paths:
+#       - path: /
+#         backend:
+#           serviceName: siyuan-note
+#           servicePort: 80
