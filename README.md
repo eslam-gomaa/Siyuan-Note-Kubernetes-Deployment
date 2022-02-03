@@ -6,7 +6,7 @@ Deploy Siyuan Note on your Kubernetes cluster.
 ## Usage
 
 Things to change
-* Storage Class
+* [Storage Class](https://github.com/eslam-gomaa/Siyuan-Note-Kubernetes-Deployment/blob/main/siyuan.yaml#L50)
 
 <br>
 
