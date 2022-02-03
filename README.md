@@ -2,8 +2,6 @@
 Deploy Siyuan Note on your Kubernetes cluster.
 
 <br>
-<br>
-<br>
 
 ## Usage
 
