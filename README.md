@@ -1,6 +1,7 @@
 # Siyuan-Note-Kubernetes-Deployment
 Deploy Siyuan Note on your Kubernetes cluster.
-[ Helm Chart will be created later. ]
+
+*[ Helm Chart will be created later. ]*
 
 <br>
 
