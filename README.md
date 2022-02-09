@@ -67,7 +67,7 @@ spec:
 
 <br>
 
-![image](https://user-images.githubusercontent.com/33789516/152326150-1ee86b69-d00e-4cf9-a0e9-b673876b13cd.png)
+![image](https://user-images.githubusercontent.com/33789516/153214354-9cfefe05-a16c-448c-85e8-1be3d29794fc.png)
 
 ---
 <br>
