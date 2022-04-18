@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: siyuan-note
+  # namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "haproxy"
+spec:
+  rules:
+  - host: siyuan.devops-caffe.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: siyuan-note
+          servicePort: 80
