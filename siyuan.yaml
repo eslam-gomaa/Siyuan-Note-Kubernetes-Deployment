@@ -19,7 +19,7 @@ spec:
       - name: siyuan
         image: b3log/siyuan:v1.9.8
         command: [ "/bin/sh", "-c", "--" ]
-        args: ["/opt/siyuan/kernel -resident -workspace=/siyuan/data -ssl=true -servePath=siyuan.devops-caffe.com""]
+        args: ["/opt/siyuan/kernel -resident -workspace=/siyuan/data -ssl=true -servePath=siyuan.devops-caffe.com"]
         ports:
         - containerPort: 6806
         resources:
